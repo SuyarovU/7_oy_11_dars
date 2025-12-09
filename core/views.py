@@ -7,6 +7,12 @@ from .models import Movie
 from rest_framework import status
 from django.http import Http404
 
+
+class HelloView(APIView):
+    def get(self, request):
+        return Response({'text':"Salom"})
+    
+    
 class MovieView(APIView):
     def get(self, request):
         movies = Movie.objects.all()
